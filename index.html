@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoiceCapsule V2 - 輕量化・離線優先・隱私至上</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0618;color:#f5f1e8;font-family:'Noto Serif TC',serif;font-weight:200;letter-spacing:0.12em;line-height:2.2;overflow-x:hidden}
+.bg{position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%, rgba(212,197,160,0.18) 0%, transparent 60%), linear-gradient(180deg,#1a0f2e 0%, #0d0618 100%);z-index:-1}
+.glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border:1px solid rgba(212,197,160,0.18);border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px}
+.hero img{width:520px;max-width:85vw;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.6));margin-bottom:40px}
+.hero h1{font-family:'Instrument Serif',serif;font-weight:200;letter-spacing:0.3em;font-size:42px;background:linear-gradient(90deg,#f5f1e8,#d4c5a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px}
+.hero .sub{font-size:13px;letter-spacing:0.4em;color:#d4c5a0;opacity:0.9;margin-bottom:12px}
+.hero .quote{font-size:18px;font-style:italic;font-weight:200;color:#f5f1e8;margin-top:30px;padding:20px 40px;border:1px solid rgba(212,197,160,0.2);border-radius:100px;background:rgba(255,255,255,0.04)}
+.section{max-width:1100px;margin:0 auto;padding:120px 24px}
+.section-title{font-size:12px;letter-spacing:0.5em;color:#d4c5a0;text-align:center;margin-bottom:80px;opacity:0.8}
+.capsule{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;margin-bottom:140px}
+.capsule:nth-child(even){grid-template-columns:1fr 1.2fr}
+.capsule:nth-child(even) .img{order:2}
+.capsule .img img{width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.6);border:1px solid rgba(212,197,160,0.15);transition:all 0.6s}
+.capsule .img img:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 30px 80px rgba(0,0,0,0.7), 0 0 40px rgba(212,197,160,0.15)}
+.capsule .num{font-family:'Instrument Serif';font-size:48px;color:#d4c5a0;opacity:0.4;margin-bottom:8px}
+.capsule h3{font-size:22px;font-weight:300;margin-bottom:16px;color:#f5f1e8}
+.capsule p{font-size:14px;line-height:2;color:rgba(245,241,232,0.75);font-weight:200}
+.download-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.card{padding:36px;text-align:left;position:relative;overflow:hidden}
+.card.free{border-color:rgba(212,197,160,0.35);box-shadow:0 0 40px rgba(212,197,160,0.12)}
+.card .badge{font-size:10px;letter-spacing:0.3em;color:#d4c5a0;border:1px solid rgba(212,197,160,0.3);padding:6px 12px;border-radius:20px;display:inline-block;margin-bottom:16px}
+.card h4{font-size:18px;font-weight:300;margin-bottom:12px}
+.card .file{font-family:monospace;font-size:12px;color:#d4c5a0;opacity:0.8;background:rgba(0,0,0,0.3);padding:8px 12px;border-radius:8px;display:inline-block;margin:12px 0}
+.card .btn{display:inline-block;margin-top:20px;padding:12px 28px;border:1px solid rgba(212,197,160,0.4);border-radius:100px;color:#f5f1e8;text-decoration:none;font-size:13px;letter-spacing:0.15em;transition:all 0.4s}
+.card .btn:hover{background:rgba(212,197,160,0.15);border-color:#d4c5a0;transform:translateY(-2px)}
+.note{text-align:center;font-size:12px;color:rgba(245,241,232,0.5);margin-top:30px;letter-spacing:0.2em}
+@media(max-width:800px){.capsule{grid-template-columns:1fr !important}.capsule:nth-child(even) .img{order:0}.download-grid{grid-template-columns:1fr}.hero img{width:320px}.hero .quote{font-size:14px;padding:16px 20px}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<div class="hero">
+  <img src="images/logo.jpg" alt="VoiceCapsule V2">
+  <h1>VoiceCapsule V2</h1>
+  <div class="sub">輕量化・離線優先・隱私至上・語音影視轉文字工具</div>
+  <div class="sub">想到就說，說完就有文字</div>
+  <div class="quote">如果沒有用到進階模型與 API，免費版就已經夠了。</div>
+  <div style="margin-top:16px;font-size:13px;letter-spacing:0.2em;color:rgba(245,241,232,0.6)">核心語音轉文字，免費版一次給足。先長期使用免費版，真的需要進階功能時，再考慮升級。</div>
+</div>
+
+<div class="section">
+  <div class="section-title">五枚膠囊．完整工作流</div>
+
+  <div class="capsule glass" style="padding:40px">
+    <div class="img"><img src="images/ui_main.png" alt="主膠囊 280x55"></div>
+    <div><div class="num">01</div><h3>主膠囊 280x55</h3><p>永遠置頂膠囊，顯示 🎙 完成準備 00:00 ⚙ 💿<br>左鍵點擊麥克風即開始錄音，再點一次停止並轉文字，文字會自動輸入到游標所在的任何軟體。<br>右鍵選單：說明、關於、離開。錄音秒數/分鐘可在系統設定中調整。</p></div>
+  </div>
+
+  <div class="capsule glass" style="padding:40px">
+    <div class="img"><img src="images/ui_text.png" alt="文字膠囊"></div>
+    <div><div class="num">02</div><h3>文字膠囊 280x110</h3><p>顯示辨識結果，預設勾選。儲存 WAV 與 TXT 到 <b>audio_temp/</b> 暫存資料夾，重要文字請另存。<br>右鍵可複製/清除。</p></div>
+  </div>
+
+  <div class="capsule glass" style="padding:40px">
+    <div class="img"><img src="images/ui_system.png" alt="系統設定"></div>
+    <div><div class="num">03</div><h3>系統設定 230x400</h3><p>模型選擇 small / medium / large-v3 / turbo，聯網設定，主題形態選擇。<br><b>主題形態有4種設計</b>，檔案在主題資料夾內，檔名維持4種相同即可自換圖片。<br>可設定錄音長度，支援秒與分鐘。垃圾桶按鈕是清除 <b>logs/</b> 資料夾。</p></div>
+  </div>
+
+  <div class="capsule glass" style="padding:40px">
+    <div class="img"><img src="images/ui_media.png" alt="影音處理"></div>
+    <div><div class="num">04</div><h3>影音處理 230x400</h3><p>選擇檔案 / 音頻轉文字 / 視頻轉文字 / 批次處理 / 翻譯英文。<br><b>任何語言的音訊或影片都能轉成文字</b>，自動偵測語言。<br>翻譯功能目前僅支援翻譯成英文，選擇檔案直接轉英文，不需先轉文字。支援 TXT / SRT / LRC。</p></div>
+  </div>
+
+  <div class="capsule glass" style="padding:40px">
+    <div class="img"><img src="images/ui_api.png" alt="API設定"></div>
+    <div><div class="num">05</div><h3>API設定 230x400</h3><p>正式版功能，免費版不包含。<br>支援 AssemblyAI / OpenAI / Google / Azure / Deepgram / universal-3 等，服務提供者、模型、API金鑰、選擇檔案、處理方式、即時串流輸出。</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">免費版就已完整，你可能不需要付費</div>
+  <div class="download-grid">
+    <div class="card glass free">
+      <div class="badge">推薦・長期免費使用</div>
+      <h4>Windows 免費版</h4>
+      <div class="file">VoiceCapsule_V2_win_free.zip</div>
+      <p style="font-size:13px;line-height:1.8;opacity:0.7;margin-top:12px">麥克風無限・音訊/影片每日20分鐘・任何語言皆可轉文字・4種主題皆可用・TXT/SRT/LRC/翻譯英文</p>
+      <a class="btn" href="https://github.com/fengmexp-cell/VoiceCapsule/releases/download/v2.0.0/VoiceCapsule_V2_win_free.zip">前往 Releases 下載</a>
+    </div>
+    <div class="card glass free">
+      <div class="badge">推薦・長期免費使用</div>
+      <h4>Linux 免費版</h4>
+      <div class="file">VoiceCapsule_V2_linux_free.zip</div>
+      <p style="font-size:13px;line-height:1.8;opacity:0.7;margin-top:12px">僅適用 X11 環境・Wayland 規劃中・功能同 Windows 免費版</p>
+      <a class="btn" href="https://github.com/fengmexp-cell/VoiceCapsule/releases/download/v2.0.0/VoiceCapsule_V2_win_free.zip">直接下載</a>
+    </div>
+    <div class="card glass">
+      <div class="badge">僅在需要時・再考慮正式版</div>
+      <h4>Windows 正式版 NT$299 買斷</h4>
+      <div class="file">VoiceCapsule_V2_win.zip</div>
+      <p style="font-size:13px;line-height:1.8;opacity:0.7;margin-top:12px">音訊/影片無限制・解鎖全部模型 small/medium/large-v3/turbo・解鎖完整 API</p>
+      <a class="btn" href="https://github.com/fengmexp-cell/VoiceCapsule/releases/download/v2.0.0/VoiceCapsule_V2_linux_free.zip">直接下載</a>
+    </div>
+    <div class="card glass">
+      <div class="badge">僅在需要時・再考慮正式版</div>
+      <h4>Linux 正式版 NT$299 買斷</h4>
+      <div class="file">VoiceCapsule_V2_linux.zip</div>
+      <p style="font-size:13px;line-height:1.8;opacity:0.7;margin-top:12px">僅適用 X11・音訊/影片無限制・解鎖全部模型與 API</p>
+      <a class="btn" href="https://github.com/fengmexp-cell/VoiceCapsule/releases/download/v2.0.0/VoiceCapsule_V2_win.zip">直接下載</a>
+    </div>
+  </div>
+  <div class="note">下載請至 GitHub Releases 頁面・Linux 僅適用 X11 環境</div>
+</div>
+
+<div style="text-align:center;padding:80px 20px;opacity:0.4;font-size:11px;letter-spacing:0.3em">VoiceCapsule V2.0.0 ・ 輕量化・離線優先・隱私至上</div>
+
+</body>
+</html>
